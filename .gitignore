@@ -39,6 +39,6 @@ out/
 /gradle/wrapper/gradle-wrapper.properties
 /gradlew
 /src/main/resources/application.yaml
-/docker-env.yaml
+/compose-env.yaml
 /settings.gradle
 /gradlew.bat

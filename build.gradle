@@ -21,12 +21,10 @@ repositories {
 dependencies {
 
     implementation 'org.springframework.data:spring-data-jpa'
-    implementation 'org.postgresql:postgresql:42.4.1'
+    implementation 'org.mongodb:mongodb-driver:3.12.11'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-
-    implementation 'org.flywaydb:flyway-core:9.1.2'
 
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 
