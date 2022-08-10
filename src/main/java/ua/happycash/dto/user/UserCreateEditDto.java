@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import ua.happycash.database.entity.Role;
 
 import javax.validation.constraints.NotBlank;
 
@@ -21,10 +22,10 @@ public class UserCreateEditDto {
     String email;
 
     @NotBlank(message = "Enter your password")
-    String password;
+    String rawPassword;
 
     @NotBlank(message = "Enter your phone number")
     String phoneNumber;
 
-    String role;
+    Role role;
 }

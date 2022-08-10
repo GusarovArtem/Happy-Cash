@@ -4,19 +4,21 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+import javax.persistence.*;
 
 @Data
-@Document
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=false, of = "id")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     String id;
 
-    String name;
+    String username;
 
     String email;
 
@@ -24,5 +26,6 @@ public class User {
 
     String phoneNumber;
 
-    String role;
+    @Enumerated(EnumType.STRING)
+    Role role;
 }
