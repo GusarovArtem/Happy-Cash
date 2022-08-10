@@ -17,7 +17,7 @@ public class CreditCard {
 
     String cardName;
 
-    String cardHolderName;
+    String cardholderName;
 
     byte cvv;
 
