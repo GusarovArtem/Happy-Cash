@@ -5,6 +5,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.time.LocalDateTime;
 
 @Data
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 public class Expense {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     String id;
 
     String name;
