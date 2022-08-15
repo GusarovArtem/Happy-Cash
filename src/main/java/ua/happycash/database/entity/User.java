@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Data
 @Builder
+@Document
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false, of = "id")
