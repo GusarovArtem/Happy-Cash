@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.happycash.database.entity.user.User;
 import ua.happycash.database.entity.wallet.Wallet;
 import ua.happycash.dto.user.UserReadDto;
+import ua.happycash.dto.wallet.WalletReadDto;
 import ua.happycash.service.user.UserServiceImpl;
 import ua.happycash.service.wallet.WalletServiceImpl;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/")
@@ -45,7 +47,7 @@ public class MainController {
         if (user != null) {
             UserReadDto userEntity = userService.getHoder(user.getName());
             data.put("profile", userEntity);
-            List<Wallet> messages = walletService.findAllForUser(oauthUser.getUser());
+            Optional<WalletReadDto> messages = walletService.getAllByUser(user);
             data.put("profile", userEntity);
             data.put("messages", messages);
         }

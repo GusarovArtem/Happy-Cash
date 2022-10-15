@@ -6,10 +6,14 @@ import ua.happycash.database.entity.user.User;
 import ua.happycash.database.entity.wallet.Wallet;
 import ua.happycash.dto.wallet.WalletReadDto;
 
-import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface WalletRepository extends MongoRepository<Wallet, String> {
 
-    List<WalletReadDto> getAllByHolder(User user);
+    Optional<WalletReadDto> getAllByUser(User user);
+
+    Optional<WalletReadDto> getAllByUserAndId(User user, String id);
+
+
 }

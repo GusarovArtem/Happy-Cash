@@ -5,6 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ua.happycash.database.entity.user.User;
 import ua.happycash.database.entity.wallet.Wallet;
 import ua.happycash.database.repository.WalletRepository;
 import ua.happycash.dto.wallet.WalletCreateEditDto;
@@ -48,13 +49,13 @@ public class WalletServiceImpl implements WalletService {
         }
 
         @Override
-        public Optional<WalletReadDto> getAllForUser(OAuth2User oAuth2User) {
-                return Optional.empty();
+        public Optional<WalletReadDto> getAllByUser(User user) {
+                return walletRepository.getAllByUser(user);
         }
 
         @Override
-        public List<Wallet> getForUserByWalletId(OAuth2User oAuth2User, String id) {
-                return walletRepository.findAll();
+        public Optional<WalletReadDto> getAllByUserAndId(User user, String id) {
+                return walletRepository.getAllByUserAndId(user, id);
         }
 
         @Transactional

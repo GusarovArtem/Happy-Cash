@@ -1,11 +1,9 @@
 package ua.happycash.service.wallet;
 
-import org.springframework.security.oauth2.core.user.OAuth2User;
-import ua.happycash.database.entity.wallet.Wallet;
+import ua.happycash.database.entity.user.User;
 import ua.happycash.dto.wallet.WalletCreateEditDto;
 import ua.happycash.dto.wallet.WalletReadDto;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface WalletService {
@@ -16,9 +14,9 @@ public interface WalletService {
 
     Optional<WalletReadDto> update(String id, WalletCreateEditDto walletCreateEditDto);
 
-    Optional<WalletReadDto> getAllForUser(OAuth2User oAuth2User);
+    Optional<WalletReadDto> getAllByUser(User user);
 
-    List<Wallet> getForUserByWalletId(OAuth2User oAuth2User, String id);
+    Optional<WalletReadDto> getAllByUserAndId(User user, String id);
 
     boolean delete(String id);
 }
