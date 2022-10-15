@@ -2,6 +2,7 @@ package ua.happycash.service.wallet;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.happycash.database.entity.Wallet;
@@ -9,6 +10,7 @@ import ua.happycash.database.repository.WalletRepository;
 import ua.happycash.dto.wallet.WalletCreateEditDto;
 import ua.happycash.dto.wallet.WalletReadDto;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -43,6 +45,16 @@ public class WalletServiceImpl implements WalletService {
                         })
                         .map(walletRepository::save)
                         .map(schedule -> modelMapper.map(schedule, WalletReadDto.class));
+        }
+
+        @Override
+        public Optional<WalletReadDto> getAllForUser(OAuth2User oAuth2User) {
+                return Optional.empty();
+        }
+
+        @Override
+        public List<Wallet> getForUserByWalletId(OAuth2User oAuth2User, String id) {
+                return walletRepository.findAll();
         }
 
         @Transactional
