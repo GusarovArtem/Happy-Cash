@@ -1,4 +1,4 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.creaditCard;
 
 public enum CreditCardType {
     VISA("VISA"),

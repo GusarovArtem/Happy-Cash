@@ -1,7 +1,6 @@
 package ua.happycash.service.transaction;
 
-import org.springframework.stereotype.Service;
-import ua.happycash.database.entity.CreditCard;
+import ua.happycash.database.entity.creaditCard.CreditCard;
 import ua.happycash.dto.transaction.TransactionCreateEditDto;
 import ua.happycash.dto.transaction.TransactionReadDto;
 

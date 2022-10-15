@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import ua.happycash.configuration.WebSecurityConfig;
-import ua.happycash.database.entity.Role;
-import ua.happycash.database.entity.User;
+import ua.happycash.database.entity.user.User;
+import ua.happycash.database.entity.user.Role;
 import ua.happycash.database.repository.UserRepository;
 import ua.happycash.dto.user.UserCreateEditDto;
 

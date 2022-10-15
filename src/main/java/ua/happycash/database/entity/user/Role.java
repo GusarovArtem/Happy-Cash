@@ -1,10 +1,12 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.user;
 
 import org.springframework.security.core.GrantedAuthority;
 
 public enum Role implements GrantedAuthority {
-    USER,
-    ADMIN;
+    HOLDER,
+    MANAGER,
+    ADMIN,
+    SUPER_ADMIN;
 
     @Override
     public String getAuthority() {

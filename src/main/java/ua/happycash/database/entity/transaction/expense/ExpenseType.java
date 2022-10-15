@@ -1,4 +1,4 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.transaction.expense;
 
 public enum ExpenseType {
     SPORT_AND_ENTERTAINMENT("Sport & Entertainment"),

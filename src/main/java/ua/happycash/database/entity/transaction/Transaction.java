@@ -1,4 +1,4 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.transaction;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @Document
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Expense {
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,5 +24,5 @@ public class Expense {
 
     Long amount;
 
-    ExpenseType expenseType;
+    boolean isSuccessful;
 }

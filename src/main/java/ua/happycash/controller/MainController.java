@@ -6,17 +6,14 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.NonFinal;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ua.happycash.database.entity.User;
-import ua.happycash.database.entity.Wallet;
-import ua.happycash.database.repository.UserRepository;
+import ua.happycash.database.entity.user.User;
+import ua.happycash.database.entity.wallet.Wallet;
 import ua.happycash.dto.user.UserReadDto;
-import ua.happycash.service.user.UserService;
 import ua.happycash.service.user.UserServiceImpl;
 import ua.happycash.service.wallet.WalletServiceImpl;
 
@@ -46,7 +43,7 @@ public class MainController {
         Map<Object, Object> data = new HashMap<>();
 
         if (user != null) {
-            UserReadDto userEntity = userService.getOauthUser(user.getName());
+            UserReadDto userEntity = userService.getHoder(user.getName());
             data.put("profile", userEntity);
             List<Wallet> messages = walletService.findAllForUser(oauthUser.getUser());
             data.put("profile", userEntity);

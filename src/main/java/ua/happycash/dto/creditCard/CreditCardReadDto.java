@@ -3,7 +3,7 @@ package ua.happycash.dto.creditCard;
 
 import lombok.Builder;
 import lombok.Value;
-import ua.happycash.database.entity.CreditCardType;
+import ua.happycash.database.entity.creaditCard.CreditCardType;
 
 import java.time.LocalDateTime;
 

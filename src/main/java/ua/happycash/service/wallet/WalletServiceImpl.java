@@ -5,7 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ua.happycash.database.entity.Wallet;
+import ua.happycash.database.entity.wallet.Wallet;
 import ua.happycash.database.repository.WalletRepository;
 import ua.happycash.dto.wallet.WalletCreateEditDto;
 import ua.happycash.dto.wallet.WalletReadDto;

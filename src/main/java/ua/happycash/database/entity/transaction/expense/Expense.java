@@ -1,4 +1,4 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.transaction.expense;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -12,21 +12,17 @@ import java.time.LocalDateTime;
 @Data
 @Document
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CreditCard {
+public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     String id;
 
-    String cardName;
+    String name;
 
-    String cardholderName;
+    LocalDateTime dateTime;
 
-    byte cvv;
+    Long amount;
 
-    String cardNumber;
-
-    LocalDateTime expiryDate;
-
-    CreditCardType creditCardType;
+    ExpenseType expenseType;
 }

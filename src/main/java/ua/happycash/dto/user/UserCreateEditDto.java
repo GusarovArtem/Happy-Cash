@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import ua.happycash.database.entity.Role;
+import ua.happycash.database.entity.user.Role;
 
 import javax.validation.constraints.NotBlank;
 

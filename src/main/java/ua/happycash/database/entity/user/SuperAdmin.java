@@ -1,10 +1,12 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.user;
+
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import javax.persistence.*;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Data
 @Builder
@@ -13,20 +15,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false, of = "id")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    String id;
-
-    String username;
-
-    String email;
-
-    String password;
-
-    String phoneNumber;
+public class SuperAdmin extends User {
 
     @Enumerated(EnumType.STRING)
-    Role role;
+    Role role = Role.SUPER_ADMIN;
 }

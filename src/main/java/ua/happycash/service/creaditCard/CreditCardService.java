@@ -1,8 +1,6 @@
 package ua.happycash.service.creaditCard;
 
-import org.springframework.stereotype.Service;
-import ua.happycash.database.entity.User;
-import ua.happycash.database.entity.Wallet;
+import ua.happycash.database.entity.wallet.Wallet;
 import ua.happycash.dto.creditCard.CreditCardCreateEditDto;
 import ua.happycash.dto.creditCard.CreditCardReadDto;
 

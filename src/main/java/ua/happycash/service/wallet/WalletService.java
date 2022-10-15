@@ -1,7 +1,7 @@
 package ua.happycash.service.wallet;
 
 import org.springframework.security.oauth2.core.user.OAuth2User;
-import ua.happycash.database.entity.Wallet;
+import ua.happycash.database.entity.wallet.Wallet;
 import ua.happycash.dto.wallet.WalletCreateEditDto;
 import ua.happycash.dto.wallet.WalletReadDto;
 

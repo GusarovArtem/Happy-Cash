@@ -1,24 +1,32 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.creaditCard;
 
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.time.LocalDateTime;
 
 @Data
 @Document
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Wallet {
+public class CreditCard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     String id;
 
-    String name;
+    String cardName;
 
-    User holder;
+    String cardholderName;
+
+    byte cvv;
+
+    String cardNumber;
+
+    LocalDateTime expiryDate;
+
+    CreditCardType creditCardType;
 }

@@ -1,18 +1,19 @@
-package ua.happycash.database.entity;
+package ua.happycash.database.entity.wallet;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import ua.happycash.database.entity.user.User;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import java.time.LocalDateTime;
 
 @Data
 @Document
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Transaction {
+public class Wallet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,9 +21,5 @@ public class Transaction {
 
     String name;
 
-    LocalDateTime dateTime;
-
-    Long amount;
-
-    boolean isSuccessful;
+    User user;
 }
